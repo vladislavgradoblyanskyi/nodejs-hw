@@ -3,8 +3,8 @@ import cors from 'cors';
 import { logger } from './middleware/logger.js';
 import 'dotenv/config';
 import { connectMongoDB } from './db/connectMongoDB.js';
-import { notFoundHandler } from './middleware/notFoundHandler.js';
-import { errorHandler } from './middleware/errorHandler.js';
+import  notFoundHandler  from './middleware/notFoundHandler.js';
+import  errorHandler  from './middleware/errorHandler.js';
 import router from './routes/notesRoutes.js';
 await connectMongoDB();
 
