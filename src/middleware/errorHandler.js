@@ -1,6 +1,6 @@
 import { HttpError } from "http-errors";
 
- const errorHandler = (err, req, res, next) => {
+export const errorHandler = (err, req, res, next) => {
   console.error("Error Middleware:", err);
   if (err instanceof HttpError) {
     return res.status(err.status).json({
@@ -12,4 +12,3 @@ import { HttpError } from "http-errors";
     message: isProd ? "Something went wrong. Please try again later." : err.message,
   });
 };
-export default errorHandler;
