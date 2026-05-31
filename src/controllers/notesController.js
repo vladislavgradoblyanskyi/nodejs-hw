@@ -31,8 +31,6 @@ export const deleteNote = async (req,res) =>{
 //patch
 export const updateNote = async (req,res) =>{
   const {noteId} = req.params;
-  console.log(req.params);
-  console.log(req.body);
   const note = await Note.findOneAndUpdate({ _id: noteId },req.body, { returnDocument: "after" },);
   if(!note){
     throw createHttpError(404, "Note not found");
