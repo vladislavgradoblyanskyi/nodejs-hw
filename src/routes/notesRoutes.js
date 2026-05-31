@@ -4,7 +4,7 @@ import {getAllNotes,getNoteById,createNote,deleteNote,updateNote} from '../contr
 const router = Router();
 
 router.get('/',getAllNotes);
-router.get('/:id', getNoteById);
+router.get('/:noteId', getNoteById);
 router.post('/', createNote);
 router.delete("/:noteId", deleteNote);
 router.patch('/:noteId', updateNote);

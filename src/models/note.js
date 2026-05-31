@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
-export const Note = new Schema(
+export const noteSchema = new Schema(
   {
     title: {
       type: String,
@@ -26,4 +26,4 @@ export const Note = new Schema(
   },
 );
 
-export default mongoose.model('Note', Note);
+export default mongoose.model('Note', noteSchema);
