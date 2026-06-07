@@ -6,6 +6,7 @@ import { connectMongoDB } from './db/connectMongoDB.js';
 import  {notFoundHandler}  from './middleware/notFoundHandler.js';
 import  {errorHandler}  from './middleware/errorHandler.js';
 import router from './routes/notesRoutes.js';
+import { errors } from "celebrate";
 await connectMongoDB();
 
 const PORT = process.env.PORT ?? 3000;
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(cors());
 app.use(router);
 app.use(notFoundHandler);
+app.use(errors());
 app.use(errorHandler);
 
 app.listen(PORT, ()=> {
