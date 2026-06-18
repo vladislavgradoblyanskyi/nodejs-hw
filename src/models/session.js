@@ -6,7 +6,7 @@ const SessionSchema = new Schema(
       type: Schema.Types.ObjectId,
       required: true,
     },
-    accesToken:{
+    accessToken:{
       type: String,
       required: true,
     },
@@ -14,7 +14,7 @@ const SessionSchema = new Schema(
       type: String,
       required:true,
     },
-    accesTokenValidUntil:{
+    accessTokenValidUntil:{
       type: Date,
       required: true,
     },
