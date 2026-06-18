@@ -1,6 +1,6 @@
 import {model,Schema} from 'mongoose';
 
-const SessionSchema = new Schema(
+export const SessionSchema = new Schema(
   {
     userId: {
       type: Schema.Types.ObjectId,
@@ -27,4 +27,4 @@ const SessionSchema = new Schema(
 );
 
 
-export const Session = model('Session',SessionSchema);
+export default model('Session',SessionSchema);
