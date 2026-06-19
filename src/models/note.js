@@ -30,5 +30,5 @@ export const noteSchema = new Schema(
     timestamps: true,
   },
 );
-noteSchema.index({ tag: 1 });
+noteSchema.index({ tag: 1, userId: 1 });
 export default mongoose.model('Note', noteSchema);

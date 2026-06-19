@@ -1,15 +1,16 @@
 import crypto from 'crypto';
+import  Session  from '../models/session.js';
 import { FIFTEEN_MINUTES, ONE_DAY } from '../constants/time.js';
-import { Session } from '../models/session.js';
+
 export const createSession = async userId=>{
-  const accesToken = crypto.randomUUID();
+  const accessToken = crypto.randomUUID();
   const refreshToken = crypto.randomUUID();
 
   return Session.create({
     userId,
-    accesToken,
+    accessToken,
     refreshToken,
-    accesTokenValidUntil: new Date(Date.now()+FIFTEEN_MINUTES),
+    accessTokenValidUntil: new Date(Date.now()+FIFTEEN_MINUTES),
     refreshTokenValidUntil: new Date(Date.now()+ONE_DAY),
   });
 };
@@ -37,4 +38,5 @@ export const setSessionCookies = (res, session) => {
     maxAge: ONE_DAY,
   });
 };
+
 

@@ -1,6 +1,6 @@
 import { model, Schema } from 'mongoose';
 
-const userSchema = new Schema(
+export const userSchema = new Schema(
   {
     username: {
        type: String,
@@ -16,6 +16,11 @@ const userSchema = new Schema(
       type: String,
       required: true,
       minlength: 8,
+    },
+    avatar:{
+      type:String,
+      required: false,
+      default: 'https://ac.goit.global/fullstack/react/default-avatar.jpg',
     },
   },
   {
@@ -33,4 +38,4 @@ userSchema.methods.toJSON = function(){
   return obj;
 };
 
-export const User = model('User', userSchema);
+export default model('User', userSchema);
