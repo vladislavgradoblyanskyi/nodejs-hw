@@ -5,7 +5,7 @@ import  User  from '../models/user.js';
 import  Session  from '../models/session.js';
 import { createSession } from '../services/auth.js';
 import { setSessionCookies } from '../services/auth.js';
-import { sendEmail } from '../utils/sendmail.js';
+import { sendEmail } from '../utils/sendMail.js';
 import handlebars from 'handlebars';
 import path from 'node:path';
 import fs from 'node:fs/promises';
